@@ -1,5 +1,7 @@
 # trex
 
+[![Build Status](https://travis-ci.org/anthonyalmarza/trex.svg?branch=master)](https://travis-ci.org/anthonyalmarza/trex)
+
 #### A simple redis client for twisted
 
 **trex** inherits directly from *txredisapi*
