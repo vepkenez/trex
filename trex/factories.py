@@ -65,7 +65,7 @@ class RedisFactory(ReconnectingClientFactory):
     def delConnection(self, conn):
         try:
             self.pool.remove(conn)
-        except Exception, e:
+        except Exception as e:
             log.msg("Could not remove connection from pool: %s" % str(e))
 
         self.size = len(self.pool)
