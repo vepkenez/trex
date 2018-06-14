@@ -1,5 +1,3 @@
-import types
-
 from .connections import ConnectionHandler
 from .exceptions import ConnectionError
 from .protocols import RedisProtocol, SubscriberProtocol, MonitorProtocol
@@ -25,7 +23,7 @@ class RedisFactory(ReconnectingClientFactory):
                 "Redis poolsize must be an integer, not %s" % repr(poolsize)
             )
 
-        if not isinstance(dbid, (int, types.NoneType)):
+        if not isinstance(dbid, (int, type(None))):
             raise ValueError(
                 "Redis dbid must be an integer, not %s" % repr(dbid)
             )
