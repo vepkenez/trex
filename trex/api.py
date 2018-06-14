@@ -32,7 +32,7 @@ class RedisApiMixin():
                         raise InvalidData("Encoding charset was not specified")
                     try:
                         cmd = s.encode(self.charset, self.errors)
-                    except UnicodeEncodeError, e:
+                    except UnicodeEncodeError as e:
                         raise InvalidData(
                             "Error encoding unicode value '%s': %s" %
                             (repr(s), e))
