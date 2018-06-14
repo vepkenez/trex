@@ -53,7 +53,7 @@ class RedisProtocol(LineReceiver, policies.TimeoutMixin, RedisApiMixin):
                 response = yield self.auth(self.factory.password)
                 if isinstance(response, ResponseError):
                     raise response
-            except Exception, e:
+            except Exception as e:
                 self.factory.continueTrying = False
                 self.transport.loseConnection()
 
@@ -68,7 +68,7 @@ class RedisProtocol(LineReceiver, policies.TimeoutMixin, RedisApiMixin):
                 response = yield self.select(self.factory.dbid)
                 if isinstance(response, ResponseError):
                     raise response
-            except Exception, e:
+            except Exception as e:
                 self.factory.continueTrying = False
                 self.transport.loseConnection()
 
